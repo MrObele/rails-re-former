@@ -14,7 +14,6 @@
 
 </form>   
 
--->
 
 
 
@@ -34,3 +33,22 @@
 
    <%= submit_tag("Create User") %>
  <% end %>
+ -->
+
+ <%= form_for(@user) do |f|%>
+
+  <%= f.label :username %>
+   <%= f.text_field :username, placeholder: "Enter username" %>
+
+   <%= f.label :email %>
+   <%= f.text_field  :email, placeholder: "example@gmail.com" %>
+
+   <%= f.label :password %>
+   <%= f.password_field :password %>
+
+   <%= f.label :confirm_password %>
+   <%= f.password_field :confirm_password %>
+
+
+   <%= f.submit("Create User") %>
+  <% end %>
