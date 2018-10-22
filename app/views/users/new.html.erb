@@ -1,3 +1,6 @@
+<h1> Create a User Account </h1>
+
+
 <!--
 <form accept-charset="UTF-8" method ="POST" action="/users/create">
 <input type="hidden" name="authenticity_token" value="1234567890">
@@ -18,6 +21,9 @@
 
 
 <%= form_tag("/users/create", method: "post") do %>
+
+
+
    <%= label_tag(:username, "UserName:") %>
    <%= text_field_tag(:username) %>
 
@@ -37,6 +43,8 @@
 
  <%= form_for(@user) do |f|%>
 
+  <%= render '/shared/error' %>
+
   <%= f.label :username %>
    <%= f.text_field :username, placeholder: "Enter username" %>
 
@@ -47,7 +55,7 @@
    <%= f.password_field :password %>
 
    <%= f.label :confirm_password %>
-   <%= f.password_field :confirm_password %>
+   <%= f.password_field :password_confirmation %>
 
 
    <%= f.submit("Create User") %>
