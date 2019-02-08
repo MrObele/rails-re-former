@@ -1,0 +1,62 @@
+<h1> Create a User Account </h1>
+
+
+<!--
+<form accept-charset="UTF-8" method ="POST" action="/users/create">
+<input type="hidden" name="authenticity_token" value="1234567890">
+
+  <label for="username">Username: </label><input type="text" name="user[username]" id="username">
+
+  <label for="email">Email: </label><input type="email" name="user[email]" id="email">
+
+  <label for="password">Password: </label><input type="password" name="user[password]" id="password">
+
+  <label for="confirm_password">Confirm Password: </label><input type="password" id="confirm_password">
+
+  <button type="submit" name="submit" id="submit">Create My Account</button>
+
+</form>   
+
+
+
+
+<%= form_tag("/users/create", method: "post") do %>
+
+
+
+   <%= label_tag(:username, "UserName:") %>
+   <%= text_field_tag(:username) %>
+
+   <%= label_tag(:email, "Email Address:") %>
+   <%= text_field_tag(:email) %>
+
+   <%= label_tag(:password, "Enter Password:") %>
+   <%= password_field_tag(:password) %>
+
+   <%= label_tag(:confirm_password, "Confirm Password:") %>
+   <%= password_field_tag(:confirm_password) %>
+
+
+   <%= submit_tag("Create User") %>
+ <% end %>
+ -->
+
+ <%= form_for(@user) do |f|%>
+
+  <%= render '/shared/error' %>
+
+  <%= f.label :username %>
+   <%= f.text_field :username, placeholder: "Enter username" %>
+
+   <%= f.label :email %>
+   <%= f.text_field  :email, placeholder: "example@gmail.com" %>
+
+   <%= f.label :password %>
+   <%= f.password_field :password %>
+
+   <%= f.label :confirm_password %>
+   <%= f.password_field :password_confirmation %>
+
+
+   <%= f.submit("Create User") %>
+  <% end %>

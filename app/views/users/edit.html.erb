@@ -1,0 +1,20 @@
+<h1> Modify a User Account </h1>
+
+<%= form_for @user do |f|%>
+
+    <%= render '/shared/error' %>
+
+    <%= f.label :username %>
+     <%= f.text_field :username, placeholder: "Enter username" %>
+  
+     <%= f.label :email %>
+     <%= f.text_field  :email, placeholder: "example@gmail.com" %>
+  
+     <%= f.label :password %>
+     <%= f.password_field :password %>
+  
+     <%= f.label :confirm_password %>
+     <%= f.password_field :password_confirmation %>
+  
+     <%= f.submit("Update User") %>
+    <% end %>
